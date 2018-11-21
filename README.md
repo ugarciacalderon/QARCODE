@@ -1,8 +1,14 @@
 #QARCODE
 *Aplicación Desarrollada para la Materia de Cómputo Móvil*
 
-**Licenciatura: ** Ingenieria de Software
+**Licenciatura: ** 
 
-**Materia: ** Cómputo Móvil
+Ingenieria de Software
 
-**Docente: ** M. en C. Rocio Elizabeth Pulido
+**Materia: ** 
+
+Cómputo Móvil
+
+**Docente: ** 
+
+M. en C. Rocio Elizabeth Pulido
