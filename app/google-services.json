@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "950554802542",
-    "firebase_url": "https://qarcode-99585.firebaseio.com",
-    "project_id": "qarcode-99585",
-    "storage_bucket": "qarcode-99585.appspot.com"
+    "project_number": "527003399714",
+    "firebase_url": "https://controlvehicular-9f247.firebaseio.com",
+    "project_id": "controlvehicular-9f247",
+    "storage_bucket": "controlvehicular-9f247.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:950554802542:android:7434472b798840be",
+        "mobilesdk_app_id": "1:527003399714:android:562e48c6d311685a",
         "android_client_info": {
-          "package_name": "com.example.ugarc.qarcode"
+          "package_name": "com.example.usuario.control_vehicular"
         }
       },
       "oauth_client": [
         {
-          "client_id": "950554802542-urdjdq7f2lsntbfgo5rjjtj4qcbdpu2q.apps.googleusercontent.com",
+          "client_id": "527003399714-cfn13cm948kef1hf4p5996naurv9pt90.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBzqwR2ulwv2zlHGySoTkqJ8Qz_EXFsMbA"
+          "current_key": "AIzaSyDk00u5CQHL9bdX31SAz3x0GO1yl0-GdHs"
         }
       ],
       "services": {

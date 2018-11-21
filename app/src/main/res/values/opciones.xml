@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+    <string-array name="combo_carrera">
+
+        <item>Selecciona una opción</item>
+        <item>Ing. en Software</item>
+        <item>Ing. en Plásticos</item>
+        <item>Ing. en Produccion Industrial</item>
+        <item>Seguridad Ciudadana</item>
+    </string-array>
+
+    <string-array name="Tipo_usua">
+        <item>Selecciona una opción</item>
+        <item>Alumno</item>
+        <item>Docente</item>
+        <item>Administrativo</item>
+
+    </string-array>
+</resources>
