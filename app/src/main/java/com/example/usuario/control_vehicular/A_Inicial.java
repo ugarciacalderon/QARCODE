@@ -1,8 +1,7 @@
-package com.example.ugarc.qarcode;
+package com.example.usuario.control_vehicular;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.nfc.Tag;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,7 +12,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
@@ -30,7 +28,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener,View.OnClickListener{
+public class A_Inicial extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener,View.OnClickListener{
 
     private static final String TAG = "GoogleActivity";
     private static final int RC_SIGN_IN = 9001;
@@ -44,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_a__inicial);
 
         signin = (SignInButton) findViewById(R.id.sign_in_button);
         sign_out= (Button) findViewById(R.id.sign_out);
@@ -60,14 +58,14 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             }
         });
 
-        findViewById(R.id.sign_in_button).setOnClickListener((View.OnClickListener) MainActivity.this);
+        findViewById(R.id.sign_in_button).setOnClickListener((View.OnClickListener) A_Inicial.this);
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
 
         mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .enableAutoManage(MainActivity.this,this)
+                .enableAutoManage(A_Inicial.this,this)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
@@ -77,7 +75,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     @Override
     public void onClick(View view) {
         int i = view.getId();
-        if (i==R.id.sign_in_button){signIn();}
+        if (i==R.id.sign_in_button){
+            signIn();
+        }
     }
 
     public void signIn(){
@@ -85,8 +85,24 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         startActivityForResult(intent, RC_SIGN_IN);
     }
 
+    public void sign_out(){
+        mAuth.signOut();
+
+        Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(
+                new ResultCallback<Status>() {
+                    @Override
+                    public void onResult(@NonNull Status status) {
+                        Toast.makeText(A_Inicial.this, "Cerraste sesión",Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
+        sign_out.setVisibility(View.GONE);
+        tvname.setText(null);
+        signin.setVisibility(View.VISIBLE);
+    }
+
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode==RC_SIGN_IN){
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
@@ -100,8 +116,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct){
         Log.d(TAG,"firebaseAuthWithGoogle: "+acct.getId());
 
-        AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
-        Toast.makeText(MainActivity.this,""+credential.getProvider(),Toast.LENGTH_LONG).show();
+        final AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
+        Toast.makeText(A_Inicial.this,""+credential.getProvider(),Toast.LENGTH_LONG).show();
 
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -113,32 +129,15 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                         if (task.isSuccessful()){
                             sign_out.setVisibility(View.VISIBLE);
                             signin.setVisibility(View.GONE);
-                            tvname.setText("Bienvenido "+name);
+                            Intent intent = new Intent(A_Inicial.this,MainActivity.class);
+                            startActivity(intent);
                         }
                         else {
-                            Toast.makeText(MainActivity.this,"Ocurrio un error en algo",Toast.LENGTH_LONG).show();
+                            Toast.makeText(A_Inicial.this,"Ocurrio un error en algo",Toast.LENGTH_LONG).show();
                         }
                     }
                 });
     }
-    public void sign_out(){
-        mAuth.signOut();
-
-        Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(
-                new ResultCallback<Status>() {
-                    @Override
-                    public void onResult(@NonNull Status status) {
-                        Toast.makeText(MainActivity.this, "Cerraste sesión",Toast.LENGTH_SHORT).show();
-                    }
-                }
-        );
-        sign_out.setVisibility(View.GONE);
-        tvname.setText(null);
-        signin.setVisibility(View.VISIBLE);
-    }
-
-    @Override
-    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) { }
 
     public String getdata(){
         String name = null;
@@ -152,9 +151,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         }
         return name;
     }
-    /*
-    Ejemplo extraido de: Mytrendin
-    -> Firebase Authentication using google login in android
-    Link: https://www.mytrendin.com/firebase-authentication-using-google-login-in-android/
-    */
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) { }
 }
