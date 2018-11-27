@@ -3,12 +3,21 @@
 
 **Licenciatura: ** 
 
+
 Ingenieria de Software
+
 
 **Materia: ** 
 
+
 Cómputo Móvil
+
 
 **Docente: ** 
 
+
 M. en C. Rocio Elizabeth Pulido
+
+**Alumnos**
+Ulises García Calderón
+Letycia Juarez Rojas
