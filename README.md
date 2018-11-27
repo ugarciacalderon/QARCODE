@@ -1,4 +1,5 @@
-#QARCODE
+#
+QARCODE
 
 *Aplicación Desarrollada para la Materia de Cómputo Móvil*
 
@@ -21,4 +22,5 @@ M. en C. Rocio Elizabeth Pulido
 **Alumnos**
 
 Ulises García Calderón
+
 Letycia Juarez Rojas
