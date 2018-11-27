@@ -1,4 +1,4 @@
-package com.example.ugarc.qarcode;
+package com.example.usuario.control_vehicular;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.ugarc.qarcode", appContext.getPackageName());
+        assertEquals("com.example.usuario.control_vehicular", appContext.getPackageName());
     }
 }

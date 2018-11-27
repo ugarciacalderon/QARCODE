@@ -1,4 +1,4 @@
-package com.example.ugarc.qarcode;
+package com.example.usuario.control_vehicular;
 
 import org.junit.Test;
 

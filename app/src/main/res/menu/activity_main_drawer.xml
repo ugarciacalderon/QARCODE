@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view"
+    >
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/menuopciones"
+         >
+
+        <item
+
+            android:icon="@drawable/nuevo"
+            android:id="@+id/nav_camera"
+            android:iconTint="@color/colorAccent"
+            android:title="Nuevo Usuario"
+
+            />
+        <item
+            android:id="@+id/nav_gallery"
+            android:iconTint="@color/colorAccent"
+            android:icon="@drawable/vist"
+            android:title="Visitante" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/ingreso"
+            android:iconTint="@color/colorAccent"
+            android:title="Acceso y Salida" />
+        <item
+
+            android:id="@+id/nav_slideshow"
+            android:iconTint="@color/colorAccent"
+            android:title="" />
+    </group>
+
+    <item android:title="¡Ponte en contacto 😉!!"
+        >
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/equipo"
+                android:iconTint="@color/colorAccent"
+                android:title="Acerca de..." />
+            <item
+                android:id="@+id/nav_send"
+
+                android:title="" />
+        </menu>
+    </item>
+
+</menu>

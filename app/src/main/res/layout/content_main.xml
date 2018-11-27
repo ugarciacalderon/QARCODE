@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+
+    tools:showIn="@layout/app_bar_main">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/contenedor">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                xmlns:android="http://schemas.android.com/apk/res/android">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="10dp"
+                    android:text="________________________"
+                    android:backgroundTint="#9C8412"
+                    android:background="@color/colorPrimary"
+                    android:textAlignment="center"
+                    android:textColor="#9C8412" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@color/colorPrimary"
+                    android:src="@drawable/uaemex" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="150dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Entrada/Salida Usuarios"
+                    android:textAlignment="center"
+                    android:textSize="24dp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClick"
+                    android:text="Abrir lector"
+                    android:background="@color/colorAccent"
+                    android:textColor="#fff"
+                    />
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <!-- TODO: Update blank fragment layout -->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:textAlignment="center"
+                            android:text="Nombre de Usuario"
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/lNombre"
+                            android:layout_width="365dp"
+
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:textSize="20dp"
+
+                            />
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="20dp"
+                            android:text="Vehiculo"
+                            android:textAlignment="center"
+                            />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="20dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginRight= "30dp"
+                            android:id="@+id/lVehiculo"
+                            android:textAlignment="center"
+
+                            />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="20dp"
+                            android:text="Placas"
+                            android:textAlignment="center"
+                            />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="20dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginRight= "30dp"
+                            android:id="@+id/lPlacas"
+                            android:textAlignment="center"
+
+                            />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="20dp"
+                            android:text="Color:"
+                            android:textAlignment="center"
+                            />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="20dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginRight= "30dp"
+                            android:id="@+id/lColor"
+                            android:textAlignment="center"
+                            >
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Licenciatura"
+                            android:textAlignment="center"
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/lLicenciatura"
+                            android:layout_width="226dp"
+                            android:layout_gravity="center"
+                            android:textAlignment="center"
+                            android:layout_height="51dp"
+                            ></TextView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Tipo de usuario "
+                            android:textSize="20dp"
+                            android:textAlignment="center"/>
+
+                        <TextView
+                            android:id="@+id/lTipo"
+                            android:layout_width="239dp"
+                            android:layout_gravity="center"
+                            android:textAlignment="center"
+                            android:layout_height="40dp"></TextView>
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="20dp"
+                            android:text="Hora:"
+                            android:textAlignment="center"
+                            />
+                        <TextView
+                             android:id="@+id/lHora"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="20dp"
+                            android:text="00:00"
+                            android:textAlignment="center"
+                            />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="20dp"
+                            android:text="Observaciones:"
+                            android:textAlignment="center"
+                            />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="20dp"
+                            android:textAlignment="center"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginRight= "30dp"
+                            android:id="@+id/lObs"/>
+                        <LinearLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </ScrollView>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+
+
+
+</android.support.constraint.ConstraintLayout>
